@@ -9,7 +9,7 @@
     <script>
       const chart = new Chartisan({
         el: '#chart',
-        url: "@chart('general_chart')",
+        url: "api/chart/general_chart",
       });
     </script>
 </x-app-layout>
