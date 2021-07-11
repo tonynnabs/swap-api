@@ -41,7 +41,7 @@
             <ul class="my-5">
                @foreach ($person['all_planets'] as $planet)
                 <li >
-                    <a href="{{$planet['id']}}" class="flex items-center my-2">
+                    <a href="{{route('planet.show', $planet['id'])}}" class="flex items-center my-2">
                         <p class="mr-3">{{$planet['name']}}</p>
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
@@ -57,7 +57,7 @@
             <ul class="my-5">
                 @foreach ($person['all_vehicles'] as $vehicle)
                 <li>
-                    <a href="{{$vehicle['id']}}" class="flex items-center my-2">
+                    <a href="{{route('vehicle.show', $vehicle['id'])}}" class="flex items-center my-2">
                         <p class="mr-3">{{$vehicle['name']}}</p>
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
