@@ -45,6 +45,8 @@ class VehicleController extends Controller
             return collect($vehicle)->merge([
                 'id' => $int = (int) filter_var($vehicle['url'], FILTER_SANITIZE_NUMBER_INT),
                 'new_model' => Str::limit($vehicle['model'], 15, $end='...'),
+                'cost_in_credits' => number_format((int) $vehicle['cost_in_credits'], 0, ','),
+                'max_atmosphering_speed' => number_format((int) $vehicle['max_atmosphering_speed'], 0, ','),
             ]);
         });
     }
