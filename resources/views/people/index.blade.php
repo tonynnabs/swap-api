@@ -9,7 +9,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                         </svg>
                     </div>
-                    <h2 class="pt-2 font-extrabold text-white text-lg">{{$person['name']}}</h2>
+                    <h2 class="pt-2 font-extrabold text-white text-lg"><a  class="cursor-pointer" href="{{route('people.show', $person['id'])}}">{{$person['name']}}</a></h2>
                 </div>
                 <div class="h-2/3 bg-white px-3 py-5">
                     <div class="flex flex-row justify-between items-center pb-4 border-b border-gray-200">

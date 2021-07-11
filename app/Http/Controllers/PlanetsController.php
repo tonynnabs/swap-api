@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Http;
 
 class PlanetsController extends Controller
 {
+    /**
+     * Return List of all planets to the view
+     *
+     * @return void
+     */
     public function index()
     {
         $response = Http::get('https://swapi.dev/api/planets/');
@@ -16,12 +21,24 @@ class PlanetsController extends Controller
                 ->with('planets', $this->formatPlanets($planets));
     }
 
+    /**
+     * Return detailed info of selected planet
+     *
+     * @param  mixed $id
+     * @return void
+     */
     public function show($id)
     {
         $response = Http::get("https://swapi.dev/api/planets/$id");
         return view('planets.show')->with('planet', $response->json());
     }
 
+    /**
+     * Formatting planets api response to merge ID and shorten terrain
+     *
+     * @param  mixed $planets
+     * @return void
+     */
     public function formatPlanets($planets)
     {
         return collect($planets)->map(function ($planet){

@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Http;
 
 class VehicleController extends Controller
 {
+    /**
+     * Return List of all vehicles to the view
+     *
+     * @return void
+     */
     public function index()
     {
         $response = Http::get('https://swapi.dev/api/vehicles/');
@@ -16,12 +21,24 @@ class VehicleController extends Controller
                 ->with('vehicles', $this->formatVehicles($vehicles));
     }
 
+    /**
+     * Return detailed info of selected vehicle
+     *
+     * @param  mixed $id
+     * @return void
+     */
     public function show($id)
     {
         $response = Http::get("https://swapi.dev/api/vehicles/$id");
         return view('vehicles.show')->with('vehicle', $response->json());
     }
 
+    /**
+     * Formatting Vehicle api response to merge ID and model
+     *
+     * @param  mixed $vehicles
+     * @return void
+     */
     public function formatVehicles($vehicles)
     {
         return collect($vehicles)->map(function ($vehicle){

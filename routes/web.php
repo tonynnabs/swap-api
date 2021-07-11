@@ -10,10 +10,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
-
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('people', [PeopleController::class, 'index'])->name('people.index');
     Route::get('people/{id}', [PeopleController::class, 'show'])->name('people.show');
@@ -24,4 +20,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     Route::get('vehicles', [VehicleController::class, 'index'])->name('vehicles.index');
     Route::get('vehicle/{id}', [VehicleController::class, 'show'])->name('vehicle.show');
+
+    Route::get('chart', function () {
+        return view('chart');
+    })->name('chart');
+
 });

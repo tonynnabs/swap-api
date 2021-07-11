@@ -7,9 +7,13 @@
             </svg>
         </div>
         <div class="ml-5">
-            <div class="flex items-center">
-                <h1 class="text-5xl text-white mt-3 font-extrabold">{{$person['name']}}</h1>
-                <span class="bg-blue-200  ml-3 text-black p-2 rounded-md text-xs">{{$person['gender']}}</span>
+            <div class="flex flex-col">
+                <span class="text-blue-200 font-bold">{{$person['created_at']}}</span>
+                <div class="flex items-center">
+                    <h1 class="text-5xl text-white mt-3 font-extrabold">{{$person['name']}}</h1>
+                    <span class="bg-blue-200  ml-3 text-black p-2 rounded-md text-xs">{{$person['gender']}}</span>
+                </div>
+
             </div>
             <div class="mt-3 flex items-center">
                 <div class="flex items-center">
