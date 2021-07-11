@@ -45,8 +45,8 @@ class PlanetsController extends Controller
             return collect($planet)->merge([
                 'id' => $int = (int) filter_var($planet['url'], FILTER_SANITIZE_NUMBER_INT),
                 'new_terrain' => Str::limit($planet['terrain'], 15, $end='...'),
-                'population' => number_format((int) $planet['population'], 0, ','),
-                'diameter' => number_format((int) $planet['diameter'], 0, ','),
+                'population' => number_format((int) $planet['population']),
+                'diameter' => number_format((int) $planet['diameter']),
             ]);
         });
     }
